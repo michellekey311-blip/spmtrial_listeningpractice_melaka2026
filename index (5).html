@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Listening Worksheet – PPC SPM 2026 Melaka (BI 1119/4)</title>
+<style>
+:root{
+  --bg:#f3f6f9; --card:#ffffff; --ink:#14233b; --muted:#5a6b82; --line:#d5dde7;
+  --accent:#0b6e8a; --accent-ink:#ffffff; --accent-soft:#e0f1f6;
+  --ok:#0f7b45; --ok-soft:#dff3e8; --bad:#b3261e; --bad-soft:#fbe4e2; --warn:#8a5a00; --warn-soft:#fff1d0;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1724; --card:#16243a; --ink:#e8eef7; --muted:#9db0c8; --line:#2b3c57;
+    --accent:#4cc3e0; --accent-ink:#06222c; --accent-soft:#12384a;
+    --ok:#5fd394; --ok-soft:#12372a; --bad:#ff8a80; --bad-soft:#40201f; --warn:#f2c35e; --warn-soft:#3b2f10;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1724; --card:#16243a; --ink:#e8eef7; --muted:#9db0c8; --line:#2b3c57;
+  --accent:#4cc3e0; --accent-ink:#06222c; --accent-soft:#12384a;
+  --ok:#5fd394; --ok-soft:#12372a; --bad:#ff8a80; --bad-soft:#40201f; --warn:#f2c35e; --warn-soft:#3b2f10;
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 "Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:0 18px 80px}
+header.top{padding:34px 0 8px}
+header.top .org{margin:0;color:var(--muted);font-size:.95rem}
+header.top h1{margin:6px 0 4px;font:700 2rem/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.01em}
+header.top .meta{margin:0;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:18px 0}
+.ident{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+.ident label{display:block;font-weight:600;font-size:.92rem;margin-bottom:5px}
+.ident input{width:100%;font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink)}
+input:focus-visible,select:focus-visible,button:focus-visible,audio:focus-visible,.opt input:focus-visible+.box,.pill input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
+.player{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:18px 0;box-shadow:0 6px 18px rgba(10,25,50,.12)}
+.player h2{margin:0 0 4px;font-size:1.05rem}
+.player p{margin:0 0 8px;color:var(--muted);font-size:.9rem}
+.player audio{width:100%;height:42px}
+.instr{background:var(--accent-soft);border-radius:10px;padding:12px 14px;font-size:.95rem;margin:0 0 14px}
+.part-head{margin:44px 0 0}
+.part-head h2{font:700 1.5rem Georgia,"Times New Roman",serif;margin:0}
+.part-head .qrange{color:var(--muted);margin:2px 0 0;font-size:.95rem}
+.q{padding:16px 0;border-top:1px solid var(--line)}
+.q:first-of-type{border-top:0;padding-top:4px}
+.q .stem{margin:0 0 9px;font-weight:600}
+.q .num{display:inline-block;min-width:2.1em;color:var(--accent)}
+.opts{display:grid;gap:8px;margin-left:2.1em}
+.opt{display:block;cursor:pointer}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .box{display:flex;gap:11px;align-items:flex-start;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);transition:border-color .12s,background .12s}
+.opt .let{flex:none;width:1.7em;height:1.7em;border-radius:50%;border:1.5px solid var(--muted);display:grid;place-items:center;font-weight:700;font-size:.85rem}
+.opt:hover .box{border-color:var(--accent)}
+.opt input:checked+.box{border-color:var(--accent);background:var(--accent-soft)}
+.opt input:checked+.box .let{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.opt input:disabled+.box{cursor:default}
+.opt.correct .box{border-color:var(--ok)!important;background:var(--ok-soft)!important}
+.opt.correct .let{background:var(--ok)!important;border-color:var(--ok)!important;color:#fff!important}
+.opt.wrong .box{border-color:var(--bad)!important;background:var(--bad-soft)!important}
+.opt.wrong .let{background:var(--bad)!important;border-color:var(--bad)!important;color:#fff!important}
+.fb{margin:8px 0 0 2.1em;font-size:.9rem;font-weight:600}
+.fb.ok{color:var(--ok)} .fb.no{color:var(--bad)}
+/* part 3 */
+.list{display:grid;gap:6px;margin:0 0 18px;padding:0;list-style:none}
+.list li{display:flex;gap:12px;padding:9px 12px;border-radius:10px;background:var(--bg);border:1px solid var(--line)}
+.list b{flex:none;width:1.7em;height:1.7em;border-radius:50%;background:var(--ink);color:var(--card);display:grid;place-items:center;font-size:.85rem}
+.match{display:grid;gap:12px}
+.mrow{display:grid;grid-template-columns:9.5em 1fr;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.mrow .who{font-weight:600}
+.mrow .who span{color:var(--accent);margin-right:.4em}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{cursor:pointer}
+.pill input{position:absolute;opacity:0;pointer-events:none}
+.pill span{display:grid;place-items:center;width:2.4em;height:2.4em;border:1.5px solid var(--line);border-radius:9px;font-weight:700;background:var(--bg);transition:background .12s,border-color .12s}
+.pill:hover span{border-color:var(--accent)}
+.pill input:checked+span{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.pill.dup input:checked+span{background:var(--warn-soft);border-color:var(--warn);color:var(--warn)}
+.pill.correct span{background:var(--ok)!important;border-color:var(--ok)!important;color:#fff!important}
+.pill.wrong span{background:var(--bad)!important;border-color:var(--bad)!important;color:#fff!important}
+.dupnote{margin:10px 0 0;color:var(--warn);font-weight:600;font-size:.92rem;min-height:1.3em}
+.mrow .fb{grid-column:1/-1;margin:0}
+/* part 4 */
+.story{font-size:1.04rem;line-height:2.15}
+.tip{margin:0 0 14px;padding:12px 14px;border-radius:10px;background:var(--warn-soft);color:var(--warn);font-size:.95rem}
+.storytitle{text-align:center;margin:6px 0 14px;font-size:1.1rem}
+.story p{margin:0 0 14px}
+.blank{font:inherit;width:8.6em;padding:3px 8px;border:0;border-bottom:2px solid var(--muted);background:var(--accent-soft);color:var(--ink);border-radius:5px 5px 0 0;text-align:center}
+.blank::placeholder{color:var(--accent);font-weight:700}
+.blank:focus{border-bottom-color:var(--accent)}
+.blank.correct{background:var(--ok-soft);border-bottom-color:var(--ok)}
+.blank.wrong{background:var(--bad-soft);border-bottom-color:var(--bad)}
+.ans{font-size:.82rem;font-weight:700;color:var(--ok);margin-left:4px;white-space:nowrap}
+/* submit */
+.submit-card{text-align:center}
+.btn{font:inherit;font-weight:700;border:0;border-radius:11px;padding:13px 26px;cursor:pointer;background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn:hover{filter:brightness(1.07)}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.notice{margin:14px 0 0;padding:12px 14px;border-radius:10px;background:var(--warn-soft);color:var(--warn);font-weight:600;text-align:left;font-size:.95rem}
+.hidden{display:none!important}
+.formbox{margin:6px 0 18px;padding:14px;border:1.5px dashed var(--line);border-radius:12px}
+.formbox p{margin:0 0 10px;font-weight:600}
+.formbox p.okmsg{color:var(--ok)} .formbox p.errmsg{color:var(--warn)}
+.formbox a.btn{display:inline-block;text-decoration:none;font-size:.95rem;padding:10px 18px}
+.score-wrap{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.bigscore{font:700 3.6rem/1 Georgia,"Times New Roman",serif}
+.bigscore small{font-size:1.4rem;color:var(--muted)}
+.who-line{margin:2px 0 0;color:var(--muted)}
+.breakdown{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:18px 0}
+.breakdown div{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.breakdown b{display:block;font-size:1.35rem}
+.breakdown span{color:var(--muted);font-size:.88rem}
+table.rev{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:8px}
+table.rev th,table.rev td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
+table.rev th{color:var(--muted);font-weight:600;font-size:.85rem}
+td.m-ok{color:var(--ok);font-weight:700} td.m-no{color:var(--bad);font-weight:700}
+@media (max-width:560px){
+  .ident{grid-template-columns:1fr}
+  .mrow{grid-template-columns:1fr}
+  header.top h1{font-size:1.6rem}
+  .opts,.fb{margin-left:0}
+  .card{padding:16px}
+}
+@media print{
+  body{background:#fff;color:#000;font-size:12pt}
+  .player,.btns,#submitBlock,.noprint{display:none!important}
+  .card{border:1px solid #999;break-inside:avoid}
+  #results{display:block!important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <p class="org">PPC SPM 2026 · Melaka</p>
+  <h1>Listening Worksheet</h1>
+  <p class="meta">Bahasa Inggeris 1119/4 · Kertas 4 · Listening</p>
+</header>
+
+<section class="card ident" aria-label="Student details">
+  <div>
+    <label for="sname">Full name</label>
+    <input id="sname" type="text" autocomplete="name" placeholder="Type your full name">
+  </div>
+  <div>
+    <label for="sclass">Class</label>
+    <input id="sclass" type="text" placeholder="e.g. 5 Citrine">
+  </div>
+</section>
+
+<section class="player" aria-label="Listening audio">
+  <h2>Listening recording</h2>
+  <p>Press play and answer as you listen. This recording stays at the top of the screen while you scroll. Each recording is played twice.</p>
+  <audio id="aud" controls preload="metadata" src="audio.mp3"></audio>
+  <p class="fb no hidden" id="audErr" style="margin:8px 0 0">The audio file could not be loaded. Ask your teacher for help.</p>
+</section>
+
+<div class="card">
+  <p class="instr" style="margin:0"><b>Instructions:</b> Answer all 30 questions. For Parts 1 to 3, tap one answer for each question. For Part 4, type <b>no more than one word</b> in each blank space. When you finish, scroll to the bottom to submit and see your score.</p>
+</div>
+
+<!-- PART 1 -->
+<div class="part-head"><h2>Part 1</h2><p class="qrange">Questions 1 to 7</p></div>
+<section class="card">
+  <p class="instr">You will hear people talking in seven different situations. For questions 1 to 7, choose the correct answer (A, B or C).</p>
+  <div id="p1"></div>
+</section>
+
+<!-- PART 2 -->
+<div class="part-head"><h2>Part 2</h2><p class="qrange">Questions 8 to 15</p></div>
+<section class="card">
+  <p class="instr">You will hear a girl talking about her visit to Kellie’s Castle. For questions 8 to 15, choose the correct answer (A, B or C).</p>
+  <div id="p2"></div>
+</section>
+
+<!-- PART 3 -->
+<div class="part-head"><h2>Part 3</h2><p class="qrange">Questions 16 to 20</p></div>
+<section class="card">
+  <p class="instr">You will hear five short extracts in which five speakers are talking about their jobs. For questions 16 to 20, choose from the list (A to G) what each speaker says. Use each letter only once. There are two extra letters which you do not need to use.</p>
+  <ul class="list" id="p3list"></ul>
+  <div class="match" id="p3"></div>
+  <p class="dupnote" id="dupnote" role="status"></p>
+</section>
+
+<!-- PART 4 -->
+<div class="part-head"><h2>Part 4</h2><p class="qrange">Questions 21 to 30</p></div>
+<section class="card">
+  <p class="instr">You will hear an interview with a music teacher talking about how children learn music. For questions 21 to 30, fill in the missing information in each numbered space. Use <b>NO MORE THAN ONE WORD</b> for each space.</p>
+  <p class="tip"><b>Be careful:</b> your <b>spelling must be accurate</b>. No variations are allowed, so check singular and plural forms and word endings. Capital and small letters are both accepted. Read the sentence again with your answer in it to make sure it fits.</p>
+  <h3 class="storytitle">Children and Music</h3>
+  <div class="story" id="p4"></div>
+</section>
+
+<!-- SUBMIT -->
+<section class="card submit-card" id="submitBlock">
+  <h2 style="margin:0 0 6px;font:700 1.4rem Georgia,serif">Submit and check your answers</h2>
+  <p style="margin:0 0 14px;color:var(--muted)">You will see your total score out of 30, and which answers were right or wrong. Before you submit, check the spelling of your Part 4 answers.</p>
+  <div class="notice hidden" id="warn" role="alert"></div>
+  <div class="btns">
+    <button class="btn" id="submitBtn" type="button">Submit answers</button>
+    <button class="btn ghost hidden" id="forceBtn" type="button">Submit anyway</button>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="card hidden" id="results" aria-live="polite">
+  <div class="score-wrap">
+    <div class="bigscore"><span id="scoreNum">0</span><small> / 30</small></div>
+    <div>
+      <h2 style="margin:0;font:700 1.4rem Georgia,serif" id="whoName"></h2>
+      <p class="who-line" id="whoClass"></p>
+      <p class="who-line" id="pct"></p>
+    </div>
+  </div>
+  <div class="breakdown" id="breakdown"></div>
+  <div class="formbox noprint" id="formBox">
+    <p id="formStatus" role="status"></p>
+    <a class="btn ghost" id="formLink" href="#" target="_blank" rel="noopener">Open the Google Form with my details</a>
+  </div>
+  <h3 style="margin:18px 0 0">Answer review</h3>
+  <table class="rev" id="rev"></table>
+  <div class="btns noprint" style="margin-top:20px">
+    <button class="btn" id="printBtn" type="button">Print or save as PDF</button>
+    <button class="btn ghost" id="retryBtn" type="button">Try again</button>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var P1=[
+    ["What did the girl learn from her grandfather?",["Details about her grandfather’s personal habits and age.","How people in the past enjoyed simple activities and daily life.","The importance of staying healthy by doing morning exercises."],"B"],
+    ["Why do people enjoy going to the market?",["It is a place to shop, meet and talk with others.","Sellers always give free food and special discounts.","It is the only place to buy fresh vegetables and snacks."],"A"],
+    ["Why does the man feel footballers deserve more salary than others?",["They can work well under pressure.","They face more difficulty than nurses and teachers.","Their skills are rare and help clubs earn high income."],"C"],
+    ["How does she manage her drinking habit?",["She slowly replaced coffee with healthier drinks.","She drinks only local coffee to support local brands.","She reduced her daily coffee intake to two cups a day."],"A"],
+    ["What is Liana’s first thought about streaming services?",["She believes they offer many types of shows.","She thinks they are convenient and easy to use.","She thinks they are illegal and bad for the film industry."],"C"],
+    ["What did she enjoy the most about the celebration?",["Eating mooncakes together.","Watching a dance performance.","Decorating houses with lanterns."],"B"],
+    ["How to stay alert during online shopping?",["Check the number of items sold.","Read and trust all online reviews.","Change sellers after every purchase."],"A"]
+  ];
+  var P2=[
+    ["What did the writer see in front of her?",["A quiet field.","A gigantic building.","The sky turned dark."],"B"],
+    ["What feeling did the writer have when seeing the castle?",["Angry and bored.","Excited and relaxed.","Nervous and curious."],"C"],
+    ["What did William Kellie Smith become rich from?",["Selling land.","Building houses.","Growing rubber."],"C"],
+    ["What special features did William Kellie Smith plan for the castle?",["Narrow balconies.","Malaya’s first lift.","An outdoor tennis court."],"B"],
+    ["What design style was used for the castle?",["Local and European.","Indian and European.","Indian and American."],"B"],
+    ["What caused the construction to stop?",["The owner passed away.","The family moved to Scotland.","The family returned to Portugal."],"A"],
+    ["What unusual things do visitors report?",["Hearing footsteps and voices.","A strange appearance in the secret tunnels.","Seeing windows open and close on their own."],"A"],
+    ["What do people say about the figure on the rooftop?",["It is the ghost of a lady.","It is the ghost of a worker.","It is the ghost of the owner."],"C"]
+  ];
+  var P3L={A:"My work repeats each week, but I like a stable income.",B:"My work is easy and there is no pressure every day.",C:"I make my own decisions, even though the job is risky.",D:"My work is always exciting with new tasks.",E:"I enjoy seeing learners improve and gain confidence.",F:"I like working alone and planning my own routes.",G:"My work is busy but I feel proud when I help others."};
+  var P3A={16:"G",17:"A",18:"E",19:"F",20:"C"};
+  var P4A={21:"notes",22:"schools",23:"language",24:"stress",25:"memory",26:"feelings",27:"places",28:"singing",29:"explore",30:"naturally"};
+  var P4T=[
+    "Many parents think children must first learn to read music {21}, but children should listen to music before reading symbols. In many {22}, music is connected to exams. We can compare it to learning {23} because children understand patterns when they listen often. They understand music without {24}.",
+    "Listening to music also builds strong links in the brain for sound, {25} and movement. It can improve focus and attention too which helps children express their {26}. At home, parents can play songs from different {27} to build children’s sound memory in their mind.",
+    "Before instruments, {28} is a good first step because focusing on exam or perfect technique is stressful. Children should be allowed to {29} sounds, try rhythms and create own music for fun learning. Allow children to enjoy music {30}, they may build a strong love for music that can last forever."
+  ];
+  var L=["A","B","C"];
+  function $(id){return document.getElementById(id)}
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+
+  function mcq(host,data,start){
+    var h="";
+    data.forEach(function(q,i){
+      var n=start+i;
+      h+='<div class="q" id="q'+n+'"><p class="stem"><span class="num">'+n+'.</span>'+esc(q[0])+'</p><div class="opts" role="radiogroup" aria-label="Question '+n+'">';
+      q[1].forEach(function(t,k){
+        h+='<label class="opt" data-l="'+L[k]+'"><input type="radio" name="q'+n+'" value="'+L[k]+'"><span class="box"><span class="let">'+L[k]+'</span><span>'+esc(t)+'</span></span></label>';
+      });
+      h+='</div><p class="fb hidden"></p></div>';
+    });
+    $(host).innerHTML=h;
+  }
+  mcq("p1",P1,1); mcq("p2",P2,8);
+
+  var lh="";
+  Object.keys(P3L).forEach(function(k){lh+='<li><b>'+k+'</b><span>'+esc(P3L[k])+'</span></li>'});
+  $("p3list").innerHTML=lh;
+  var mh="";
+  for(var n=16;n<=20;n++){
+    mh+='<div class="mrow" id="q'+n+'"><div class="who"><span>'+n+'.</span>Speaker '+(n-15)+'</div><div class="pills" role="radiogroup" aria-label="Question '+n+', Speaker '+(n-15)+'">';
+    "ABCDEFG".split("").forEach(function(c){
+      mh+='<label class="pill" data-l="'+c+'"><input type="radio" name="q'+n+'" value="'+c+'"><span>'+c+'</span></label>';
+    });
+    mh+='</div><p class="fb hidden"></p></div>';
+  }
+  $("p3").innerHTML=mh;
+
+  var sh="";
+  P4T.forEach(function(p){
+    sh+="<p>"+esc(p).replace(/\{(\d+)\}/g,function(_,n){
+      return '<input class="blank" id="b'+n+'" data-n="'+n+'" type="text" placeholder="'+n+'" maxlength="30" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Question '+n+' (one word)"><span class="ans hidden" id="a'+n+'"></span>';
+    })+"</p>";
+  });
+  $("p4").innerHTML=sh;
+
+  function dupCheck(){
+    var used={},dups=[];
+    for(var n=16;n<=20;n++){
+      var c=document.querySelector('input[name="q'+n+'"]:checked');
+      if(c){used[c.value]=(used[c.value]||0)+1}
+    }
+    document.querySelectorAll("#p3 .pill").forEach(function(p){
+      var inp=p.querySelector("input");
+      p.classList.toggle("dup",inp.checked&&used[inp.value]>1);
+    });
+    for(var k in used){if(used[k]>1)dups.push(k)}
+    $("dupnote").textContent=dups.length?"Letter "+dups.join(", ")+" is used more than once. Each letter can only be used once.":"";
+  }
+  $("p3").addEventListener("change",dupCheck);
+
+  function norm(s){return s.toLowerCase().replace(/[^a-z\s]/g,"").trim()}
+  function getAnswers(){
+    var a={};
+    for(var n=1;n<=20;n++){
+      var c=document.querySelector('input[name="q'+n+'"]:checked');
+      a[n]=c?c.value:"";
+    }
+    for(n=21;n<=30;n++){a[n]=$("b"+n).value.trim()}
+    return a;
+  }
+  var key={};
+  P1.forEach(function(q,i){key[1+i]=q[2]});
+  P2.forEach(function(q,i){key[8+i]=q[2]});
+  for(var k in P3A)key[k]=P3A[k];
+  for(var k2 in P4A)key[k2]=P4A[k2];
+
+  function isRight(n,v){
+    if(n>=21){return v!==""&&norm(v)===P4A[n]}
+    return v===key[n];
+  }
+
+  function unanswered(a){
+    var m=[];
+    for(var n=1;n<=30;n++){if(a[n]==="")m.push(n)}
+    return m;
+  }
+
+  var FORM_BASE="https://docs.google.com/forms/d/e/1FAIpQLSdA3j7B5aZlzeauV8eME4rQCvJmpFibUnELKkwcy3ieAhZlGA/";
+  var ENTRY={name:"entry.740354271",cls:"entry.301920430",score:"entry.1184242463"};
+  function sendToForm(nm,cl,total){
+    var st=$("formStatus"),link=$("formLink");
+    var q=new URLSearchParams();
+    q.set(ENTRY.name,nm);q.set(ENTRY.cls,cl);q.set(ENTRY.score,String(total));
+    link.href=FORM_BASE+"viewform?usp=pp_url&"+q.toString();
+    st.className="";st.textContent="Sending your result to your teacher…";
+    var p;
+    try{
+      p=fetch(FORM_BASE+"formResponse",{method:"POST",mode:"no-cors",body:q});
+    }catch(e){p=Promise.reject(e)}
+    p.then(function(){
+      st.className="okmsg";
+      st.textContent="Your result (name, class and score) was sent to your teacher. If you are unsure, use the button below.";
+    }).catch(function(){
+      st.className="errmsg";
+      st.textContent="Your result could not be sent automatically. Please tap the button below, then press Submit on the form.";
+    });
+  }
+
+  var submitted=false;
+  function showWarn(msg,force){
+    $("warn").textContent=msg;$("warn").classList.remove("hidden");
+    $("forceBtn").classList.toggle("hidden",!force);
+  }
+  function clearWarn(){$("warn").classList.add("hidden");$("forceBtn").classList.add("hidden")}
+
+  function trySubmit(force){
+    if(submitted)return;
+    var nm=$("sname").value.trim(),cl=$("sclass").value.trim();
+    if(!nm||!cl){
+      showWarn("Please type your full name and class at the top of the page before you submit.",false);
+      $("sname").scrollIntoView({behavior:"smooth",block:"center"});
+      (nm?$("sclass"):$("sname")).focus();
+      return;
+    }
+    var a=getAnswers(),u=unanswered(a);
+    if(u.length&&!force){
+      showWarn("You have not answered "+(u.length===1?"question ":"questions ")+u.join(", ")+". Go back and answer them, or submit anyway.",true);
+      return;
+    }
+    clearWarn();
+    grade(a,nm,cl);
+  }
+
+  function grade(a,nm,cl){
+    submitted=true;
+    var sc={p1:0,p2:0,p3:0,p4:0},rows="";
+    for(var n=1;n<=30;n++){
+      var ok=isRight(n,a[n]);
+      if(ok){if(n<=7)sc.p1++;else if(n<=15)sc.p2++;else if(n<=20)sc.p3++;else sc.p4++}
+      var shown=a[n]===""?"(no answer)":esc(a[n]);
+      var corr=n>=21?P4A[n]:key[n];
+      rows+='<tr><td>'+n+'</td><td>'+shown+'</td><td>'+esc(corr)+'</td><td class="'+(ok?"m-ok":"m-no")+'">'+(ok?"✓ Correct":"✗ Wrong")+'</td></tr>';
+      mark(n,a[n],ok);
+    }
+    var total=sc.p1+sc.p2+sc.p3+sc.p4;
+    $("scoreNum").textContent=total;
+    $("whoName").textContent=nm;
+    $("whoClass").textContent="Class: "+cl;
+    $("pct").textContent=Math.round(total/30*100)+"%";
+    $("breakdown").innerHTML=
+      '<div><b>'+sc.p1+' / 7</b><span>Part 1</span></div>'+
+      '<div><b>'+sc.p2+' / 8</b><span>Part 2</span></div>'+
+      '<div><b>'+sc.p3+' / 5</b><span>Part 3</span></div>'+
+      '<div><b>'+sc.p4+' / 10</b><span>Part 4</span></div>';
+    $("rev").innerHTML='<tr><th>Q</th><th>Your answer</th><th>Correct answer</th><th>Result</th></tr>'+rows;
+    document.querySelectorAll("input").forEach(function(i){
+      if(i.id!=="sname"&&i.id!=="sclass")i.disabled=true;
+    });
+    $("sname").readOnly=true;$("sclass").readOnly=true;
+    $("submitBlock").classList.add("hidden");
+    $("results").classList.remove("hidden");
+    sendToForm(nm,cl,total);
+    $("results").scrollIntoView({behavior:"smooth",block:"start"});
+  }
+
+  function mark(n,v,ok){
+    var box=$("q"+n);
+    if(n>=21){
+      var inp=$("b"+n);
+      inp.classList.add(ok?"correct":"wrong");
+      if(!ok){var s=$("a"+n);s.textContent="→ "+P4A[n];s.classList.remove("hidden")}
+      return;
+    }
+    var fb=box.querySelector(".fb");
+    var sel=n>=16?".pill":".opt";
+    box.querySelectorAll(sel).forEach(function(o){
+      var l=o.getAttribute("data-l");
+      if(l===key[n])o.classList.add("correct");
+      else if(l===v)o.classList.add("wrong");
+    });
+    fb.classList.remove("hidden");
+    if(ok){fb.className="fb ok";fb.textContent="Correct"}
+    else{fb.className="fb no";fb.textContent=(v===""?"No answer. ":"Not quite. ")+"Correct answer: "+key[n]}
+  }
+
+  function reset(){
+    submitted=false;
+    document.querySelectorAll("input").forEach(function(i){
+      if(i.type==="radio")i.checked=false;
+      if(i.classList.contains("blank")){i.value="";i.classList.remove("correct","wrong")}
+      i.disabled=false;
+    });
+    $("sname").readOnly=false;$("sclass").readOnly=false;
+    document.querySelectorAll(".opt,.pill").forEach(function(o){o.classList.remove("correct","wrong","dup")});
+    document.querySelectorAll(".fb").forEach(function(f){f.classList.add("hidden")});
+    document.querySelectorAll(".ans").forEach(function(f){f.classList.add("hidden")});
+    $("dupnote").textContent="";
+    $("results").classList.add("hidden");
+    $("submitBlock").classList.remove("hidden");
+    clearWarn();
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+
+  $("aud").addEventListener("error",function(){$("audErr").classList.remove("hidden")});
+  $("submitBtn").addEventListener("click",function(){trySubmit(false)});
+  $("forceBtn").addEventListener("click",function(){trySubmit(true)});
+  $("retryBtn").addEventListener("click",reset);
+  $("printBtn").addEventListener("click",function(){try{window.print()}catch(e){}});
+})();
+</script>
+</body>
+</html>
